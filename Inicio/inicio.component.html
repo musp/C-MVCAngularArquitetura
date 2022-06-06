@@ -1,0 +1,19 @@
+<section>
+  <div class="row" *ngIf="this.dadosDeConexao && this.dadosDeConexao.usuario">
+    <div class="col-12">
+      <h5>
+        Usuário Logado: {{this.dadosDeConexao.usuario.login ? this.dadosDeConexao.usuario.login : 'Não está logado, volte ao login para conectar-se novamente.'}}
+      </h5>
+    </div>
+  </div>
+  <div class="col-12">
+    <button class="btn btn-success" title="Aplicativos" (click)="this.menuAplicativoAberto = !this.menuAplicativoAberto">
+      Aplicativos
+    </button>
+  </div>
+  <div class="col-12">
+    <button *ngFor="let menu of this.DadosMenu" class="btn btn-primary col-lg-3 col-sm-12" (click)="this.SelecaoFuncionalidade(menu)">
+      {{menu.titulo}}
+    </button>
+  </div>
+</section>
